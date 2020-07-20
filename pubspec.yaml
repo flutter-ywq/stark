@@ -10,13 +10,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  toast: ^0.1.5
+  shared_preferences: ^0.5.8
+  dio: ^3.0.9
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  toast: ^0.1.5
-  shared_preferences: ^0.5.8
-  dio: ^3.0.9
+
 
 flutter:
 

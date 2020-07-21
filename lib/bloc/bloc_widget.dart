@@ -18,7 +18,7 @@ abstract class BlocWidget<T extends Bloc> extends StatefulWidget {
     assert(bloc != null, 'bloc must not is null');
   }
 
-  String title();
+  String get title;
 
   BlocState<BlocWidget<T>> state();
 

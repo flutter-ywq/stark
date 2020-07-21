@@ -13,12 +13,12 @@ import 'bloc_view.dart';
 /// @date 2020/7/14
 abstract class BlocWidget<T extends Bloc> extends StatefulWidget {
   final T bloc;
-  final String title;
 
-  BlocWidget(this.title, this.bloc, {Key key}) : super(key: key) {
-    assert(title != null, 'title must not is null');
+  BlocWidget(this.bloc, {Key key}) : super(key: key) {
     assert(bloc != null, 'bloc must not is null');
   }
+
+  String title();
 
   BlocState<BlocWidget<T>> state();
 

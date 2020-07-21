@@ -146,7 +146,7 @@ class Request<T> {
             };
           }
           T data = api.dataConvert(response.data);
-          if (api.state(response.data)) {
+          if (api.state(data)) {
             if (onSuccess != null) {
               onSuccess(ResponseData<T>(metadata: response, data: data));
             }

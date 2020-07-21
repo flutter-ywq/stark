@@ -23,8 +23,7 @@ abstract class Api<T> {
   Method method = Method.POST;
 
   /// 以application/x-www-form-urlencoded格式发送数据
-  ContentType contentType =
-      ContentType.parse("application/x-www-form-urlencoded");
+  ContentType contentType = ContentType.parse("application/x-www-form-urlencoded");
 
 //  ContentType contentType = ContentType.json;
 
@@ -47,7 +46,7 @@ abstract class Api<T> {
   String requestUrl() => '$baseUrl$path';
 
   /// 定义什么是业务处理成功状态
-  bool state(dynamic obj);
+  bool state(T obj);
 
   /// 数据转换
   T Function(dynamic data) dataConvert;

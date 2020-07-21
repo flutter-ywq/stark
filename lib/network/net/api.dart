@@ -6,7 +6,7 @@ import 'package:dio/dio.dart';
 /// @author 燕文强
 ///
 /// @date 2019-09-02
-abstract class Api<R> {
+abstract class Api<T> {
   /// 域名Url
   String baseUrl = '';
 
@@ -50,7 +50,7 @@ abstract class Api<R> {
   bool state(dynamic obj);
 
   /// 数据转换
-  R Function(dynamic data) dataConvert;
+  T Function(dynamic data) dataConvert;
 
   @override
   String toString() {

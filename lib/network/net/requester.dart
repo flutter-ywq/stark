@@ -11,21 +11,21 @@ import '../utils/logger.dart';
 /// @author 燕文强
 ///
 /// @date 2019-09-02
-class Request {
+class Request<T> {
   /// dio实例对象，外部不可访问
   static Dio _dio;
 
   /// api配置，外部可访问，不可修改
-  final Api api;
+  final Api<T> api;
 
   /// 开始发出请求时的回调事件
-  final Function(Api api) onStart;
+  final Function(Api<T> api) onStart;
 
   /// 网络响应成功，服务器处理业务成功
-  final Function(ResponseData response) onSuccess;
+  final Function(ResponseData<T> response) onSuccess;
 
   /// 网络响应成功，但服务器处理业务失败
-  final Function(ResponseData response) onFail;
+  final Function(ResponseData<T> response) onFail;
 
   /// 网络请求响应错误时候的回调事件
   final Function(dynamic error) onError;
@@ -34,7 +34,7 @@ class Request {
   final Function onCatchError;
 
   /// 网络请求完成后的回调事件
-  final Function(Api api) onCompleted;
+  final Function(Api<T> api) onCompleted;
 
   /// 请求发出时的进度变化回调事件
   final Function(int progress, int total) onSendProgress;
@@ -145,14 +145,14 @@ class Request {
               return data;
             };
           }
-          dynamic data = api.dataConvert(response.data);
+          T data = api.dataConvert(response.data);
           if (api.state(response.data)) {
             if (onSuccess != null) {
-              onSuccess(ResponseData(metadata: response, data: data));
+              onSuccess(ResponseData<T>(metadata: response, data: data));
             }
           } else {
             if (onFail != null) {
-              onFail(ResponseData(metadata: response, data: data));
+              onFail(ResponseData<T>(metadata: response, data: data));
             }
           }
         },

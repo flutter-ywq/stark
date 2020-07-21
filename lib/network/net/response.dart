@@ -5,9 +5,9 @@ import 'package:dio/dio.dart';
 /// @author 燕文强
 ///
 /// @date 2019-09-02
-class ResponseData {
+class ResponseData<T> {
   Response metadata;
-  dynamic data;
+  T data;
 
   ResponseData({this.metadata, this.data});
 

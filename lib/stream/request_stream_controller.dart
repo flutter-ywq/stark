@@ -32,7 +32,7 @@ class RequestStreamController<S extends Api, T> {
           },
           onFail: (response) {
             if (_onCompleted != null) _onCompleted();
-            sink.add(StateBo.networkFail());
+            sink.add(StateBo.businessFail());
           },
           onError: (error) {
             if (error.runtimeType is DioError) {
@@ -43,7 +43,7 @@ class RequestStreamController<S extends Api, T> {
               Net.logFormat('request error:${error.toString()}');
             }
             if (_onCompleted != null) _onCompleted();
-            sink.add(StateBo.error());
+            sink.add(StateBo.networkFail());
           },
           onCatchError: (error) {
             Net.logFormat('catch error:${error.toString()}');

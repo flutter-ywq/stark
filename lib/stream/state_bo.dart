@@ -35,6 +35,10 @@ class StateBo<T> {
   StateBo.networkFail({this.code, this.message}) {
     this.uiState = UIState.networkFailView;
   }
+
+  StateBo.businessFail({this.code, this.message}) {
+    this.uiState = UIState.businessFail;
+  }
 }
 
 enum UIState {
@@ -55,6 +59,9 @@ enum UIState {
 
   /// 无数据
   noData,
+
+  /// 业务处理失败
+  businessFail,
 
   /// 完成预期
   completed,

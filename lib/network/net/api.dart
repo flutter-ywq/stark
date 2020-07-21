@@ -6,7 +6,7 @@ import 'package:dio/dio.dart';
 /// @author 燕文强
 ///
 /// @date 2019-09-02
-abstract class Api<T> {
+abstract class Api<S, T> {
   /// 域名Url
   String baseUrl = '';
 
@@ -17,7 +17,7 @@ abstract class Api<T> {
   Map<String, dynamic> header;
 
   /// 请求体
-  dynamic body;
+  S body;
 
   /// 请求方式
   Method method = Method.POST;

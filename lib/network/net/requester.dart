@@ -11,15 +11,15 @@ import '../utils/logger.dart';
 /// @author 燕文强
 ///
 /// @date 2019-09-02
-class Request<T> {
+class Request<S, T> {
   /// dio实例对象，外部不可访问
   static Dio _dio;
 
   /// api配置，外部可访问，不可修改
-  final Api<T> api;
+  final Api<S, T> api;
 
   /// 开始发出请求时的回调事件
-  final Function(Api<T> api) onStart;
+  final Function(Api<S, T> api) onStart;
 
   /// 网络响应成功，服务器处理业务成功
   final Function(ResponseData<T> response) onSuccess;
@@ -34,7 +34,7 @@ class Request<T> {
   final Function onCatchError;
 
   /// 网络请求完成后的回调事件
-  final Function(Api<T> api) onCompleted;
+  final Function(Api<S, T> api) onCompleted;
 
   /// 请求发出时的进度变化回调事件
   final Function(int progress, int total) onSendProgress;

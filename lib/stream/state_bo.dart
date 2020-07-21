@@ -6,6 +6,8 @@
 class StateBo<T> {
   T data;
   UIState uiState;
+  int code;
+  String message;
 
   /// 默认完成状态
   StateBo(this.data, {this.uiState = UIState.completed});
@@ -18,11 +20,11 @@ class StateBo<T> {
     this.uiState = UIState.noNetwork;
   }
 
-  StateBo.networkPoor() {
+  StateBo.networkPoor({this.code, this.message}) {
     this.uiState = UIState.networkPoor;
   }
 
-  StateBo.error() {
+  StateBo.error({this.code, this.message}) {
     this.uiState = UIState.error;
   }
 
@@ -30,7 +32,7 @@ class StateBo<T> {
     this.uiState = UIState.noData;
   }
 
-  StateBo.networkFail() {
+  StateBo.networkFail({this.code, this.message}) {
     this.uiState = UIState.networkFailView;
   }
 }

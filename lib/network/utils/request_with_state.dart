@@ -40,7 +40,7 @@ class RequestWithState<S, T> extends AbsRequestWithState<S, T> {
       },
       onFail: (response) {
         if (onCompleted != null) onCompleted();
-        onFail(StateBo.businessFail(code: 2120, message: response.data.toString())..data = response.data);
+        onFail(StateBo.businessFail(code: 120, message: response.data.toString())..data = response.data);
       },
       onError: (error) {
         if (onCompleted != null) onCompleted();
@@ -51,14 +51,14 @@ class RequestWithState<S, T> extends AbsRequestWithState<S, T> {
           onFail(StateBo.networkFail(code: statusCode));
         } else {
           Net.logFormat('request error:${error.toString()}');
-          onFail(StateBo.networkFail(code: 2119, message: error.toString()));
+          onFail(StateBo.networkFail(code: 119, message: error.toString()));
         }
       },
       onCatchError: (error) {
         if (onCompleted != null) onCompleted();
         Net.logFormat('catch error:${error.toString()}');
         if (error.runtimeType is CastError) {
-          onFail(StateBo.error(code: 2110, message: error.toString()));
+          onFail(StateBo.error(code: 110, message: error.toString()));
           return;
         }
         onFail(StateBo.error());

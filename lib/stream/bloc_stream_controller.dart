@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:stark/stream/state_bo.dart';
+import 'package:stark/network/state_bo.dart';
 
 /// @description BlocStreamController
 ///

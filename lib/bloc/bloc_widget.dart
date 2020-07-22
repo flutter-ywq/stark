@@ -1,6 +1,6 @@
 import 'package:stark/bloc/state_view.dart';
 import 'package:stark/common/views.dart';
-import 'package:stark/stream/state_bo.dart';
+import 'package:stark/network/state_bo.dart';
 import 'package:stark/stream/state_stream_builder.dart';
 import 'package:stark/utils/logger.dart';
 import 'package:flutter/material.dart';

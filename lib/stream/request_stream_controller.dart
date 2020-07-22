@@ -32,7 +32,7 @@ class RequestStreamController<S, T> {
           },
           onFail: (response) {
             if (_onCompleted != null) _onCompleted();
-            sink.add(StateBo.businessFail(code: 120, message: response.data.toString())..data = response.data);
+            sink.add(StateBo.businessFail(code: 2120, message: response.data.toString())..data = response.data);
           },
           onError: (error) {
             if (_onCompleted != null) _onCompleted();
@@ -44,14 +44,14 @@ class RequestStreamController<S, T> {
             } else {
               Net.logFormat('request error:${error.toString()}');
               // 万能的119
-              sink.add(StateBo.networkFail(code: 119, message: error.toString()));
+              sink.add(StateBo.networkFail(code: 2119, message: error.toString()));
             }
           },
           onCatchError: (error) {
             if (_onCompleted != null) _onCompleted();
             Net.logFormat('catch error:${error.toString()}');
             if (error.runtimeType is CastError) {
-              sink.add(StateBo.error(code: 110, message: error.toString()));
+              sink.add(StateBo.error(code: 2110, message: error.toString()));
               return;
             }
             sink.add(StateBo.error());

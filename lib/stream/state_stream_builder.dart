@@ -35,16 +35,16 @@ class StateStreamBuilder {
           return stateView.loadingView();
         }
         if (UIState.networkFailView == uiState) {
-          return stateView.networkFailView();
+          return stateView.networkFailView(asyncSnapshot.data);
         }
         if (UIState.noNetwork == uiState) {
-          return stateView.noNetworkView();
+          return stateView.noNetworkView(asyncSnapshot.data);
         }
         if (UIState.networkPoor == uiState) {
-          return stateView.networkPoorView();
+          return stateView.networkPoorView(asyncSnapshot.data);
         }
         if (UIState.error == uiState) {
-          return stateView.errorView();
+          return stateView.errorView(asyncSnapshot.data);
         }
         return completedView(asyncSnapshot.data.data);
       },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stark/network/state_bo.dart';
 
 /// @description StateView 以状态为维度的视图
 ///
@@ -7,19 +8,19 @@ import 'package:flutter/material.dart';
 /// @date 2020/7/17
 mixin StateView {
   /// 无网络状态视图
-  Widget noNetworkView();
+  Widget noNetworkView(StateBo data);
 
   /// 网络差状态视图
-  Widget networkPoorView();
+  Widget networkPoorView(StateBo data);
 
   /// 获取数据失败（超时、500错误等）
-  Widget networkFailView();
+  Widget networkFailView(StateBo data);
 
   /// 加载状态视图
   Widget loadingView();
 
   /// 错误状态视图
-  Widget errorView();
+  Widget errorView(StateBo data);
 
   /// 无数据状态视图
   Widget noDataView();

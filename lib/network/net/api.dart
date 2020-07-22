@@ -46,7 +46,9 @@ abstract class Api<S, T> {
   String requestUrl() => '$baseUrl$path';
 
   /// 定义什么是业务处理成功状态
-  bool state(T obj);
+  bool state(dynamic obj);
+
+//  bool state(T obj);
 
   /// 数据转换
   T Function(dynamic data) dataConvert;

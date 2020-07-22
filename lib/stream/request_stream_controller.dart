@@ -54,7 +54,7 @@ class RequestStreamController<S, T> {
               sink.add(StateBo.error(code: 110, message: error.toString()));
               return;
             }
-            sink.add(StateBo.error());
+            sink.add(StateBo.error(code: 114, message: error.toString()));
           });
     });
     stream = _controller.stream.transform(transformer);

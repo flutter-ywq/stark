@@ -24,4 +24,7 @@ mixin StateView {
 
   /// 无数据状态视图
   Widget noDataView();
+
+  /// 业务处理失败
+  Widget businessFail(StateBo data);
 }

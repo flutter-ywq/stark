@@ -46,6 +46,9 @@ class StateStreamBuilder {
         if (UIState.error == uiState) {
           return stateView.errorView(asyncSnapshot.data);
         }
+        if (UIState.businessFail == uiState) {
+          return stateView.businessFail(asyncSnapshot.data);
+        }
         return completedView(asyncSnapshot.data.data);
       },
     );

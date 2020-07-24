@@ -1,7 +1,6 @@
-import 'package:stark/bloc/state_view.dart';
+import 'package:stark/network/state_bo.dart';
+import 'package:stark/network/view/state_view.dart';
 import 'package:flutter/cupertino.dart';
-
-import '../network/state_bo.dart';
 
 /// @description StateStreamBuilder
 ///

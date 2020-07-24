@@ -1,7 +1,4 @@
-import 'package:stark/bloc/state_view.dart';
 import 'package:stark/common/views.dart';
-import 'package:stark/network/state_bo.dart';
-import 'package:stark/stream/state_stream_builder.dart';
 import 'package:stark/utils/logger.dart';
 import 'package:flutter/material.dart';
 import 'bloc_view.dart';
@@ -31,7 +28,7 @@ abstract class BlocWidget<T extends Bloc> extends StatefulWidget {
 /// @author 燕文强
 ///
 /// @date 2020/7/14
-abstract class BlocState<T extends BlocWidget> extends State<T> with BlocView, WidgetsBindingObserver, StateView {
+abstract class BlocState<T extends BlocWidget> extends State<T> with BlocView, WidgetsBindingObserver {
   bool _bindingObserver;
 
   @override
@@ -69,21 +66,21 @@ abstract class BlocState<T extends BlocWidget> extends State<T> with BlocView, W
 
   void prepare();
 
-  StreamBuilder<StateBo<M>> streamBuilder<M>({
-    Key key,
-    StateBo<M> initialData,
-    Stream<StateBo<M>> stream,
-    @required Function(M data) completedView,
-  }) {
-    assert(completedView != null, 'completedView must not is null !');
-    return StateStreamBuilder.create(
-      key: key,
-      initialData: initialData,
-      stream: stream,
-      stateView: this,
-      completedView: completedView,
-    );
-  }
+//  StreamBuilder<StateBo<M>> streamBuilder<M>({
+//    Key key,
+//    StateBo<M> initialData,
+//    Stream<StateBo<M>> stream,
+//    @required Function(M data) completedView,
+//  }) {
+//    assert(completedView != null, 'completedView must not is null !');
+//    return StateStreamBuilder.create(
+//      key: key,
+//      initialData: initialData,
+//      stream: stream,
+//      stateView: this,
+//      completedView: completedView,
+//    );
+//  }
 
   @override
   void didChangeAccessibilityFeatures() {}

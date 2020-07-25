@@ -6,3 +6,4 @@ export 'net/response.dart';
 export 'stream/stream.dart';
 export 'utils/utils.dart';
 export 'view/state_view.dart';
+export 'state_bo.dart';

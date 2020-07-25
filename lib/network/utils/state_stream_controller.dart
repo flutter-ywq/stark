@@ -6,10 +6,10 @@ import 'package:stark/network/state_bo.dart';
 /// @author 燕文强
 ///
 /// @date 2020/7/16
-class BlocStreamController<T extends StateBo> {
+class StateStreamController<T extends StateBo> {
   StreamController<T> controller;
 
-  BlocStreamController() {
+  StateStreamController() {
     controller = StreamController<T>();
   }
 

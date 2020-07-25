@@ -7,12 +7,12 @@ import 'logger.dart';
 /// @author 燕文强
 ///
 /// @date 2020/7/25
-class _RequestWithStateDemo<S, T extends _StatusModel> extends AbsRequestWithState<S, T> {
+class _RequestWithStateDemo<S, T extends _ResponseModel> extends AbsRequestWithState<S, T> {
   void test() {
-    _RequestWithStateDemo<String, _MyModel>().send(
+    _RequestWithStateDemo<String, _AppResponseModel>().send(
       _MyApi.content(),
       onSuccess: (data) {
-        print(data.data.cat);
+        print(data.data.result);
       },
       onFail: (data) {
         print('code:${data.code}，message:${data.message}');
@@ -72,22 +72,22 @@ class _RequestWithStateDemo<S, T extends _StatusModel> extends AbsRequestWithSta
 }
 
 /// 接口响应基础类
-class _StatusModel {
+class _ResponseModel {
   int code;
   String message;
 }
 
-class _MyModel extends _StatusModel {
-  String cat;
+class _AppResponseModel extends _ResponseModel {
+  String result;
 }
 
-class _MyApi<S, T extends _StatusModel> extends Api<S, T> {
+class _MyApi<S, T extends _ResponseModel> extends Api<S, T> {
   @override
   bool state(dynamic obj) {
     return obj['code'] == 200;
   }
 
-  static _MyApi<String, _MyModel> content() => _MyApi<String, _MyModel>()
+  static _MyApi<String, _AppResponseModel> content() => _MyApi<String, _AppResponseModel>()
     ..method = Method.GET
-    ..dataConvert = (data) => _MyModel();
+    ..dataConvert = (data) => _AppResponseModel();
 }

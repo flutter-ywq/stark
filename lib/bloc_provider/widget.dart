@@ -25,6 +25,10 @@ abstract class BlocWidget<T extends BlocBase> extends StatelessWidget with Widge
     return widget(context, bloc);
   }
 
+  T bloc(BuildContext context) {
+    return BlocProvider.of<T>(context);
+  }
+
   void retry(T bloc) {
     bloc.retry();
   }

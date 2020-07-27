@@ -8,23 +8,23 @@ import 'package:stark/network/state_bo.dart';
 /// @date 2020/7/17
 mixin StateView {
   /// 无网络状态视图
-  Widget noNetworkView(StateBo data);
+  Widget noNetworkView(BuildContext context, StateBo data);
 
   /// 网络差状态视图
-  Widget networkPoorView(StateBo data);
+  Widget networkPoorView(BuildContext context, StateBo data);
 
   /// 获取数据失败（超时、500错误等）
-  Widget networkFailView(StateBo data);
+  Widget networkFailView(BuildContext context, StateBo data);
 
   /// 加载状态视图
-  Widget loadingView();
+  Widget loadingView(BuildContext context);
 
   /// 错误状态视图
-  Widget errorView(StateBo data);
+  Widget errorView(BuildContext context, StateBo data);
 
   /// 无数据状态视图
-  Widget noDataView();
+  Widget noDataView(BuildContext context);
 
   /// 业务处理失败
-  Widget businessFail(StateBo data);
+  Widget businessFail(BuildContext context, StateBo data);
 }

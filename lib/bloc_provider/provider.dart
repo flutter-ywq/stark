@@ -9,7 +9,7 @@ import 'widget.dart';
 /// @date 2020/7/13
 class BlocProvider<T extends BlocBase> extends StatefulWidget {
   final T bloc;
-  final BlocWidget child;
+  final BlocWidget<T> child;
 
   BlocProvider({
     Key key,

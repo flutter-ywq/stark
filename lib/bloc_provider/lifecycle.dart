@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-/// @description 待描述
+/// @description 视图生命周期
 ///
 /// @author 燕文强
 ///

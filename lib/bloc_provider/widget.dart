@@ -8,7 +8,7 @@ import 'bloc.dart';
 import 'provider.dart';
 import 'lifecycle.dart';
 
-/// @description 待描述
+/// @description BlocWidget View层
 ///
 /// @author 燕文强
 ///

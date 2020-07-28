@@ -4,7 +4,7 @@ import '../net/requester.dart';
 import '../state_bo.dart';
 import 'logger.dart';
 
-/// @description 待描述
+/// @description RequestWithState
 ///
 /// @author 燕文强
 ///

@@ -36,6 +36,9 @@ abstract class BlocWidget<T extends BlocBase> extends StatelessWidget with Widge
   Widget widget(BuildContext context, final T bloc);
 
   @override
+  void prepare(BuildContext context) {}
+
+  @override
   void viewDidLoad(BuildContext context) {}
 
   @override

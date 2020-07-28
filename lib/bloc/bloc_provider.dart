@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'bloc.dart';
-import 'widget.dart';
+import 'bloc_base.dart';
+import 'bloc_widget.dart';
 
 /// @description Bloc方式提供者，以Provider来粘合页面和Bloc逻辑
 ///

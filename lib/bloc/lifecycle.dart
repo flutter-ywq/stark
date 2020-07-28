@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 /// @author 燕文强
 ///
 /// @date 2020/7/27
-mixin ViewLifecycle {
+mixin Lifecycle {
   void prepare(BuildContext context);
 
   void viewDidLoad(BuildContext context);

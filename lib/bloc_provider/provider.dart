@@ -30,6 +30,8 @@ class _BlocProviderState<T> extends State<BlocProvider<BlocBase>> {
   @override
   void initState() {
     super.initState();
+    widget.child?.prepare(context);
+    widget.bloc?.prepare();
     if (widget.child.bindingObserver) {
       WidgetsBinding.instance.addObserver(widget.child);
     }
@@ -40,11 +42,11 @@ class _BlocProviderState<T> extends State<BlocProvider<BlocBase>> {
 
   @override
   void dispose() {
-    widget.bloc?.dispose();
     if (widget.child.bindingObserver) {
       print('remove WidgetsBindingObserver');
       WidgetsBinding.instance.removeObserver(widget.child);
     }
+    widget.bloc?.dispose();
     widget.child?.dispose(context);
     super.dispose();
   }

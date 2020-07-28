@@ -6,6 +6,8 @@ import 'package:flutter/cupertino.dart';
 ///
 /// @date 2020/7/13
 abstract class BlocBase {
+  void prepare();
+
   void retry();
 
   void dispose();

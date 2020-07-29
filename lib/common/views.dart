@@ -11,13 +11,13 @@ class Views {
     return Navigator.push(context, _pageRoute(widget, stack));
   }
 
-  static Future launchAndCloseSelf(BuildContext context, Widget widget, {bool stack = false}) {
-    return Navigator.pushAndRemoveUntil(context, _pageRoute(widget, stack), (_) => false);
+  static Future<T> launchAndCloseSelf<T extends Object>(BuildContext context, Widget widget, {bool stack = false}) {
+    return Navigator.pushAndRemoveUntil<T>(context, _pageRoute(widget, stack), (_) => false);
   }
 
-  static bool finish(BuildContext context) {
+  static void finish(BuildContext context) {
 //  StatefulPage.routes.removeLast();
-    return Navigator.pop(context);
+    Navigator.pop(context);
   }
 
   static Route _pageRoute(Widget widget, bool stack) {

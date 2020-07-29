@@ -18,7 +18,7 @@ class StateStreamController<T> {
   StreamSink<StateBo<T>> get _sink => controller.sink;
 
   void add(StateBo<T> item) {
-    if (!controller.isClosed || controller.isPaused) {
+    if (!controller.isClosed && !controller.isPaused) {
       _sink.add(item);
     }
   }

@@ -23,9 +23,9 @@ abstract class Api<S, T> {
   Method method = Method.POST;
 
   /// 以application/x-www-form-urlencoded格式发送数据
-  ContentType contentType = ContentType.parse("application/x-www-form-urlencoded");
+//  ContentType contentType = ContentType.parse("application/x-www-form-urlencoded");
 
-//  ContentType contentType = ContentType.json;
+  ContentType contentType = ContentType.json;
 
   /// 连接超时时间
   int connectTimeout = 5000;
